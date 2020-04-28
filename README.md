@@ -1,6 +1,6 @@
-# Addappter.js
+# Granite.js
 
-Addappter.js is a front-end component library for rendering formatted JSON as PWA-ready DOM elements.
+Granite.js is a front-end component library for rendering formatted JSON as PWA-ready DOM elements.
 
 The word "granite" comes from the Latin word, _granum_, meaning grain. A nod to both where it was created (New Hampshire, USA - also known as _The Granite State_), as well as to how it approaches data rendering. Each _block_ of granite.js creates a self-contained chunk of HTML, CSS, and JS that can be late-loaded into any front-end enviroment - yes, even inside your existing Vue, React, or Angular project!
 
@@ -19,7 +19,6 @@ B --> E{UI}
 C --> E
 D --> E
 ```
-
 A block is called via a dynamically-imported JavaScript Promise and is then invoked with a call that includes the required JSON. 
 And this will produce a flow chart:
 
