@@ -1,8 +1,8 @@
 <html>
 <script>
-let json = {'hello' : 'world'};
 import('https://darylbrowne.github.io/granite.js/tile.js')
 .then(module => {
+    let json = {'hello' : 'world'};
     module.tile(json);
 })
 .catch(err => {
