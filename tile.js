@@ -1,8 +1,10 @@
 
 function tile_engine(json) {
+    throw new Error("Thrown from this granite slab()");
+    return;
     document.write("This granite slab(json) was given...");
     console.log(json);
-    //throw new Error("Thrown from this granite slab()");
+    
 }
 
 function tile(json) {
