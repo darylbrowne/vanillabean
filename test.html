@@ -1,13 +1,11 @@
 <html>
 <script>
-async function block() {
-    try {
-        await slabExport();
-    } catch (e) {
-        console.error(e);
-    }
-}
-
-block();
+import('https://darylbrowne.github.io/granite.js/tile.js')
+.then(module => {
+    module.tile(json);
+})
+.catch(err => {
+    document.write(err.message);
+});    
 </script>
 </html>
