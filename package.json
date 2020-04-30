@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/darylbrowne/granite.js#readme",
   "devDependencies": {
+    "babel-minify": "^0.5.1",
     "jest": "^25.5.2"
   }
 }
