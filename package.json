@@ -1,0 +1,22 @@
+{
+  "name": "granite",
+  "version": "1.0.0",
+  "description": "Front-end library for rendering JSON into UI elements",
+  "main": "raw.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darylbrowne/granite.js.git"
+  },
+  "author": "Daryl Browne and Jason Bean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darylbrowne/granite.js/issues"
+  },
+  "homepage": "https://github.com/darylbrowne/granite.js#readme",
+  "devDependencies": {
+    "jest": "^25.5.2"
+  }
+}
