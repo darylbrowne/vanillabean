@@ -29,4 +29,13 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
-      
+
+    # Checks-out your repository under $GITHUB_WORKSPACE, so auto-minify job can access it
+    - uses: actions/checkout@v2
+
+    - name: Auto Minify
+      uses: nizarmah/auto-minify@master
+      with:
+        directory: 'js'
+        output: 'mini_js'
+
