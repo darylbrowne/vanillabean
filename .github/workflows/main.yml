@@ -30,12 +30,15 @@ jobs:
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
       
-    - uses: actions/checkout@v2
     - name: Auto Minify
       uses: nizarmah/auto-minify@master
-
-    - name: Auto committing minified files
-      uses: stefanzweifel/git-auto-commit-action@v3.0.0
       with:
+        directory: 'js'
+        output: 'mini_js'
+        
+    - name: Auto committing minified files
+      uses: stefanzweifel/git-auto-commit-action
+      with:
+        repository: 'mini_js'
         commit_message: "Github Action: Auto Minified JS and CSS files"
         branch: ${{ github.ref }}
