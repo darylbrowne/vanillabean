@@ -2,7 +2,7 @@
   "name": "granite",
   "version": "1.0.0",
   "description": "Front-end library for rendering JSON into UI elements",
-  "main": "raw.js",
+  "main": "raw.mjs",
   "scripts": {
     "test": "jest"
   },
