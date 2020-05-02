@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/darylbrowne/granite.js#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.9.6",
     "babel-minify": "^0.5.1",
+    "clean-css-cli": "^4.3.0",
     "jest": "^25.5.2"
   }
 }
