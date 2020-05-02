@@ -29,5 +29,3 @@ jobs:
 
     - name: compress-action
       uses: Charlesworth/compress-action@1.0.0
-      with:
-        target-directory: 'js'
