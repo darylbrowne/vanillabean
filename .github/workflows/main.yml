@@ -24,19 +24,11 @@ jobs:
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
 
-    - uses: actions/checkout@v2
+    - name: Checkout Repo
+      uses: actions/checkout@master
 
-    - name: Auto Minify
-      uses: nizarmah/auto-minify@master
+    - name: Brotli compress the html, css and js files in repository
+      id: brotli
+      uses: charlesworth/compress-action@1.0
       with:
-        directory: 'js'
-        output: 'mini_js'
-
-    # Auto commits minified files to the repository
-    # Ignore it if you don't want to commit the files to the repository 
-    - name: Auto committing minified files
-      uses: stefanzweifel/git-auto-commit-action@v4.1.6
-      with:
-        repository: 'mini_js'
-        commit_message: "Github Action: Auto Minified JS and CSS files"
-        branch: ${{ github.ref }}
+        target-directory: 'js'
