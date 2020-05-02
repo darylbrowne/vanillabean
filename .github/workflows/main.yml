@@ -27,8 +27,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
 
-    - name: Brotli compress the html, css and js files in repository
-      id: brotli
-      uses: charlesworth/compress-action@1.0
+    - name: compress-action
+      uses: Charlesworth/compress-action@1.0.0
       with:
         target-directory: 'js'
