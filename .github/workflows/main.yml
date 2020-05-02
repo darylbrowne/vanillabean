@@ -19,8 +19,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
     - uses: actions/checkout@v2
+
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
 
@@ -32,9 +33,14 @@ jobs:
       with:
         target-directory: 'js'
   
-  # Ignore it if you don't want to commit the files to the repository 
     - name: Auto committing minified files
       uses: stefanzweifel/git-auto-commit-action@v4.1.6
       with:
         commit_message: "Github Action: Auto Minified JS and CSS files"
         branch: ${{ github.ref }}
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
