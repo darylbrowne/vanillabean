@@ -33,7 +33,3 @@ jobs:
         repository: 'js'
         commit_message: "Github Action: Auto Minified JS and CSS files"
         branch: ${{ github.ref }}
-    
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.2
-
