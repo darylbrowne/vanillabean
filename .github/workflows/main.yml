@@ -24,7 +24,13 @@ jobs:
     
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
-      
+
+    - name: copy files
+      uses: canastro/copy-file-action@master
+      with:
+        source: "js/*.js"
+        target: "js/*.mjs"
+
     - name: Auto Minify
       uses: nizarmah/auto-minify@master
       with:
