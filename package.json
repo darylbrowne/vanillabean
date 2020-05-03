@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "release": {
-    "branches": "master"
+    "branches": "release"
   },
   "repository": {
     "type": "git",
