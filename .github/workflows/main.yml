@@ -80,5 +80,8 @@ jobs:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
 
-    - name: Release if named FIXED
-      uses: managedkaos/keyword-releaser@maste
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
