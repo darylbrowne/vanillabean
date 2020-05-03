@@ -3,8 +3,8 @@ name: CI
 on:
   push:
     branches: [ master ]
-  #pull_request:
-  #  branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
 
@@ -14,22 +14,17 @@ jobs:
     steps:
 
     - name: Checkout Repo
-      #uses: actions/checkout@master
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
+      #uses: actions/checkout@v2
 
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
-
-    - name: Increment Version
-      uses: tool3/bump@v1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
       
     - name: compress-action
       uses: Charlesworth/compress-action@1.0.0
       with:
         target-directory: 'js'
-  #here
+
     - name: Auto committing minified files
       uses: stefanzweifel/git-auto-commit-action@v4.1.6
       with:
@@ -59,3 +54,8 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
+  
+    - name: Increment Version
+      uses: tool3/bump@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
