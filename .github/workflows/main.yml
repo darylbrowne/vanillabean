@@ -8,26 +8,6 @@ on:
 
 jobs:
 
-  tag:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: tool3/bump@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          unrelated: true
-
-  publisher:
-    needs: tag
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: tool3/publisher@v1
-        with:
-          npm_token: ${{ secrets.NPM_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          scope: "@tool3"
-
   build:
     runs-on: ubuntu-latest
 
@@ -41,6 +21,11 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
 
+    - name: Increment Version
+      uses: tool3/bump@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      
     - name: compress-action
       uses: Charlesworth/compress-action@1.0.0
       with:
