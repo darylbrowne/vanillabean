@@ -13,7 +13,7 @@ jobs:
     
     steps:
 
-      - uses: actions/checkout@release
+      - uses: actions/checkout@v2
         
       - name: Make tag
         uses: tool3/bump@master
