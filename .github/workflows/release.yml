@@ -6,18 +6,28 @@ on:
       - release
 
 jobs:
-      
   tag:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: 'release'
+      - uses: actions/checkout@master
       - uses: tool3/bump@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           unrelated: true
-  
+          branch: release
+
+  publisher:
+    needs: tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: tool3/publisher@v1
+        with:
+          npm_token: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: release
+          scope: "@tool3"
+
   build:
     runs-on: ubuntu-latest
     steps:
