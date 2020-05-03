@@ -39,8 +39,12 @@ jobs:
         commit_message: "Github Action: Auto Minified JS and CSS files"
         branch: ${{ github.ref }}
 
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Make Code Badge
+      uses: shadowmoose/GHA-LoC-Badge@1.0.0
+      id: badge
+      with:
+        debug: true
+        directory: ./
+        badge: ./output/badge.svg
+        patterns: '*.js'  # Patterns in the format of a '.gitignore' file, separated by pipes.
+        ignore: 'node_modules'
