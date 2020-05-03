@@ -13,13 +13,12 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@v2
+    - name: Checkout Repo
+      uses: actions/checkout@master
+      #uses: actions/checkout@v2
 
     - name: Run Jest
       uses: stefanoeb/jest-action@1.0.2
-
-    - name: Checkout Repo
-      uses: actions/checkout@master
 
     - name: Increment Version
       uses: tool3/bump@v1
