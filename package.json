@@ -2,9 +2,12 @@
   "name": "granite",
   "version": "3.0.0",
   "description": "Front-end library for rendering JSON into UI elements",
-  "main": "js/person.mjs",
+  "main": "js/person.js",
   "scripts": {
     "test": "jest"
+  },
+  "release": {
+    "branches": "master"
   },
   "repository": {
     "type": "git",
