@@ -6,13 +6,17 @@ on:
       - release
 
 jobs:
+
   tag:
+
     runs-on: ubuntu-latest
+    
     steps:
+
       - uses: actions/checkout@master
         
       - name: Make tag
-      - uses: tool3/bump@master
+        uses: tool3/bump@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           unrelated: true
