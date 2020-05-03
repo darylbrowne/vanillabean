@@ -1,4 +1,4 @@
-name: Deploy Nightly
+name: CD
 
 #on:
 #  schedule:
@@ -8,12 +8,9 @@ on:
   push:
     branches:
       - release
-
-name: Create Release
-
 jobs:
   build:
-    name: Create Release
+    name: Deploy Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
