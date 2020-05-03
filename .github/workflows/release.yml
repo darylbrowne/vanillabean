@@ -6,10 +6,13 @@ on:
       - release
 
 jobs:
+      
   tag:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@release
+      - uses: actions/checkout@v2
+        with:
+          ref: 'release'
       - uses: tool3/bump@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -18,8 +21,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@release
       - name: Release
         uses: softprops/action-gh-release@v1
         env:
