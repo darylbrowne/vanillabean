@@ -17,8 +17,8 @@ jobs:
         
       - name: Checkout code
         uses: actions/checkout@master
-          with:
-            ref: release
+        with:
+          ref: release
         
       - name: Create Release
         id: create_release
