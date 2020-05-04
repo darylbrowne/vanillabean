@@ -3,7 +3,7 @@ name: CD
 on:
   schedule:
     #- cron: '0 2 * * *' # run at 2 AM UTC
-    - cron:  '*/5 * * * *'
+    - cron:  '*/2 * * * *'
       
 jobs:
   build:
@@ -15,18 +15,13 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
         
-      - name: Checkout code
-        uses: actions/checkout@master
-        with:
-          ref: release
-        
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: alice-biometrics/release-creator/@v1.0.4
         with:
-          tag_name: ${{steps.date.outputs.date}}
-          release_name: Release ${{steps.date.outputs.date}}
-          draft: false
-          prerelease: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{steps.date.outputs.date}}
+          description: 'This is an awesome version :ok_hand:'
+          repo: 'alice-biometrics/github-releaser'
+          branch: 'release'
+          draft: 'false'
+          prerelease: 'false'
