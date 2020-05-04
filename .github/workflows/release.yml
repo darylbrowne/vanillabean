@@ -30,3 +30,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: release
           scope: "@tool3"
+
+      - name: Create Release
+        uses: alice-biometrics/release-creator/@v1.0.4
+        with:
+          branch: release
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: inherit
+          description: inherit        
