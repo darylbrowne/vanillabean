@@ -3,7 +3,7 @@ name: CD
 on:
   schedule:
     #- cron: '0 2 * * *' # run at 2 AM UTC
-    - cron:  '*/5 * * * *'
+    - cron:  '*/3 * * * *'
       
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           version: ${{steps.date.outputs.date}}
           description: 'This is an awesome version :ok_hand:'
-          repo: 'alice-biometrics/github-releaser'
+          repo: 'darylbrowne/granite.js'
           branch: 'release'
           draft: 'false'
           prerelease: 'false'
