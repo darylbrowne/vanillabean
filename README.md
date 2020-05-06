@@ -1,39 +1,17 @@
 # VanillaBean.js
 
-![CI](https://github.com/darylbrowne/granite.js/workflows/CI/badge.svg) ![Generated Button](https://raw.githubusercontent.com/darylbrowne/granite.js/image-data/badge.svg)
+![CI](https://github.com/darylbrowne/vanillabean/workflows/CI/badge.svg) ![Generated Button](https://raw.githubusercontent.com/darylbrowne/vanillabean/image-data/badge.svg)
 
-VanillaBean.js is a front-end component library for rendering formatted JSON as PWA-ready DOM elements.
+VanillaBean.js is a library for rendering components for the Interactive Canvas aspect of Google Actions / Dialogflow Agents.
 
-The word "granite" comes from the Latin word, _granum_, meaning grain. A nod to both where it was created (New Hampshire, USA - also known as _The Granite State_), as well as to how it approaches data rendering. Each _block_ of granite.js creates a self-contained chunk of HTML, CSS, and JS that can be late-loaded into any front-end enviroment - yes, even inside your existing Vue, React, or Angular project!
 
 ## VanillaBean.js Life Cycle
 
 A block is called via a dynamically-imported JavaScript Promise and is then invoked with a call that includes the required JSON. 
 And this will produce a flow chart:
 
-```mermaid
-graph LR
-X[import via Promise] --> A
-A[then generate] --> B((CSS))
-A --> C(HTML)
-A --> D(Helper JS)
-B --> E{UI}
-C --> E
-D --> E
-```
 A block is called via a dynamically-imported JavaScript Promise and is then invoked with a call that includes the required JSON. 
 And this will produce a flow chart:
-
-
-```mermaid
-sequenceDiagram
-JS ->> CSS: CSS Variables 
-CSS-->>HTML: Design Framework
-CSS-> HTML: Theme, then Block
-Note right of HTML: Helper functions<br/>are block-enclosed.
-JS->HTML: Write Semantic Markup
-JS-->HTML: Include Helper Functions
-```
 
 # Foundations
 
@@ -79,5 +57,5 @@ While the Granite.js repository is always available for you to clone and/or comp
 
 ## Community
 
-Granite.js is an MIT-licensed open source project with its ongoing development made possible by the support of addapptation and these awesome [backers](https://addapptation.com). If you'd like to join us, please fork this project and reach out to us at granite[at]addapptation[dot]com. 
+VanillaBean.js is an MIT-licensed open source project with its ongoing development made possible by the support of addapptation and these awesome [backers](https://addapptation.com). If you'd like to join us, please fork this project and reach out to us at granite[at]addapptation[dot]com. 
 
